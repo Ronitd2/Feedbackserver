@@ -7,7 +7,7 @@ const SignupHandler=require('./routers/SignupHandler');
 
 require('dotenv').config();
 const app = express();
-const port = 8080;
+const PORT=process.env.PORT || 8080;
 const DATABASE=process.env.DATABASE;
 
 app.use(cors());
@@ -32,6 +32,6 @@ app.use('/feedback/',FeedbackHandler);
 app.use('/login',LoginHandler);
 app.use('/signup',SignupHandler);
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
